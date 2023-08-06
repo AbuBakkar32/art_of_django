@@ -18,6 +18,7 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Url path for individual app
     path('', include('course.urls')),
     path('admin/', include('fees.urls')),
     path('admin/', include('result.urls')),
