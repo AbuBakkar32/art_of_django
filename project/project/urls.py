@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # Url path for individual app
-    path('', include('course.urls')),
-    path('admin/', include('fees.urls')),
-    path('admin/', include('result.urls')),
-]
+                  path('admin/', admin.site.urls),
+                  # Url path for individual app
+                  path('', include('course.urls')),
+                  path('admin/', include('fees.urls')),
+                  path('admin/', include('result.urls')),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
