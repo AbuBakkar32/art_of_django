@@ -18,10 +18,11 @@ from django.urls import path
 from django.conf import settings
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  # Url path for individual app
-                  path('', include('course.urls')),
-                  path('admin/', include('fees.urls')),
-                  path('admin/', include('result.urls')),
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+  path('admin/', admin.site.urls),
+  # Url path for individual app
+  path('', include('course.urls')),
+  path('admin/', include('fees.urls')),
+  path('admin/', include('result.urls')),
+]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
