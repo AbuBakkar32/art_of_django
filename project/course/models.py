@@ -11,10 +11,7 @@ class Course(models.Model):
 
     class Meta:
         abstract = True
+        db_table = 'course'
 
     def __str__(self):
         return self.course_name
-
-class fees(Course):
-
-
