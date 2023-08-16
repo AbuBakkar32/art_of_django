@@ -35,11 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #START - Install App Here
+    'rest_framework',
+    'jwt_auth',
+    # START - Install App Here
     'course',
     'result',
     'fees',
-    #END - Install App Here
+    # END - Install App Here
 ]
 
 MIDDLEWARE = [
@@ -52,13 +54,24 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ],
+}
+
+JWT_AUTH = {
+    'JWT_SECRET_KEY': SECRET_KEY,
+    'JWT_ALGORITHM': 'HS256',
+}
+
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # START - This is the path of the templates folder
-        'DIRS': [os.path.join(BASE_DIR,'templates'),],
+        'DIRS': [],
         # END - This is the path of the templates folder
         'APP_DIRS': True,
         'OPTIONS': {
