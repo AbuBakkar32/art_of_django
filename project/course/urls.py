@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import CustomObtainJWTView
+from .views import index
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('login/', CustomObtainJWTView.as_view(), name='login'),
+    path("page/<name>", index, name='index'),
 ]
