@@ -5,6 +5,12 @@
   <title>Title</title>
 </head>
 <body>
-
+{% if not request.user == user_to_follow %}
+    {% if request.user.following.filter(id=user_to_follow.id).exists %}
+        <a href="{% url 'unfollow_user' user_to_follow.id %}">Unfollow</a>
+    {% else %}
+        <a href="{% url 'follow_user' user_to_follow.id %}">Follow</a>
+    {% endif %}
+{% endif %}
 </body>
 </html>
