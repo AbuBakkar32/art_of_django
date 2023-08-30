@@ -18,6 +18,7 @@ from django.urls import path
 from fees import views
 
 urlpatterns = [
+    path('', views.profile_page, name='follow_page'),
     path('follow/<int:user_id>/', views.follow_user, name='follow_user'),
     path('unfollow/<int:user_id>/', views.unfollow_user, name='unfollow_user'),
 ]
