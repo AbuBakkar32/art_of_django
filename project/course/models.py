@@ -1,12 +1,14 @@
 from django.db import models
 
+
 # Create your models here.
 class Timestamp(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        abstract=True
+        abstract = True
+
 
 class Course(Timestamp):
     course_name = models.CharField(max_length=100)
@@ -19,6 +21,7 @@ class Course(Timestamp):
     def __str__(self):
         return self.course_name
 
+
 class Student(Timestamp):
     student_name = models.CharField(max_length=100)
     student_email = models.CharField(max_length=100)
@@ -28,6 +31,7 @@ class Student(Timestamp):
 
     def __str__(self):
         return self.student_name
+
 
 class Enquiry(Timestamp):
     enquiry_name = models.CharField(max_length=100)
