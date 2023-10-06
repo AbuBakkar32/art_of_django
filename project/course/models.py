@@ -32,25 +32,24 @@ class Student(Timestamp):
     def __str__(self):
         return self.student_name
 
-
-class Enquiry(Timestamp):
-    enquiry_name = models.CharField(max_length=100)
-    enquiry_email = models.CharField(max_length=100)
-    enquiry_mobile = models.CharField(max_length=100)
-    enquiry_message = models.TextField()
-
-    def __str__(self):
-        return self.enquiry_name
-
-    class Meta:
-        verbose_name_plural = 'Enquiries'
-
-
-class Contact(Timestamp):
-    contact_name = models.CharField(max_length=100)
-    contact_email = models.CharField(max_length=100)
-    contact_mobile = models.CharField(max_length=100)
-    contact_message = models.TextField()
-
-    def __str__(self):
-        return self.contact_name
+# class Enquiry(Timestamp):
+#     enquiry_name = models.CharField(max_length=100)
+#     enquiry_email = models.CharField(max_length=100)
+#     enquiry_mobile = models.CharField(max_length=100)
+#     enquiry_message = models.TextField()
+#
+#     def __str__(self):
+#         return self.enquiry_name
+#
+#     class Meta:
+#         verbose_name_plural = 'Enquiries'
+#
+#
+# class Contact(Timestamp):
+#     contact_name = models.CharField(max_length=100)
+#     contact_email = models.CharField(max_length=100)
+#     contact_mobile = models.CharField(max_length=100)
+#     contact_message = models.TextField()
+#
+#     def __str__(self):
+#         return self.contact_name
