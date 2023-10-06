@@ -9,6 +9,5 @@ def index(request, name):
 def about(request):
     return HttpResponse("<h1>About Page</h1>")
 
-
-def contact(request):
-    return HttpResponse("<h1>Contact Page</h1>")
+# def contact(request):
+#     return HttpResponse("<h1>Contact Page</h1>")
