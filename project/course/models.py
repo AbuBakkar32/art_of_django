@@ -45,12 +45,11 @@ class Enquiry(Timestamp):
     class Meta:
         verbose_name_plural = 'Enquiries'
 
-
-class Contact(Timestamp):
-    contact_name = models.CharField(max_length=100)
-    contact_email = models.CharField(max_length=100)
-    contact_mobile = models.CharField(max_length=100)
-    contact_message = models.TextField()
-
-    def __str__(self):
-        return self.contact_name
+# class Contact(Timestamp):
+#     contact_name = models.CharField(max_length=100)
+#     contact_email = models.CharField(max_length=100)
+#     contact_mobile = models.CharField(max_length=100)
+#     contact_message = models.TextField()
+#
+#     def __str__(self):
+#         return self.contact_name
